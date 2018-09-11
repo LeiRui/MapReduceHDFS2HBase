@@ -1,0 +1,25 @@
+# Eclipse IDE files
+**/.classpath
+**/.project
+**/.settings/
+# src/main/resources/
+
+# intellij IDE files
+**/*.iml
+**/.idea/
+**/*.log
+
+# Apple OS X related
+**/.DS_Store
+derby-tsfile-db
+
+# build generated
+**/target/
+**/build/
+
+**/out/
+
+*.jar
+*.gz
+*.tar.gz
+*.tar
