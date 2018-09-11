@@ -6,7 +6,11 @@
     3. 使用 HBase ImportTsv 工具将格式化的 HDFS 数据导入到 HBase 表。
 
     这里是1。
+
+    hadoop jar mapreduceHBaseHDFS.jar  /user/mrtest0911
+
     执行成功后可简单通过测试一中的 HBase Shell 来验证数据。
+
  */
 package com.tsinghua.dmg.rl;
 
@@ -84,8 +88,10 @@ public class ImportByMR {
         FileInputStream in = new FileInputStream(file);
         conf.addResource(in);
         createTable(conf);
+        System.out.println("!!!!!!!!!!!!!!!!!remainingArgs[0]:");
         GenericOptionsParser optionParser = new GenericOptionsParser(conf, argv);
         String[] remainingArgs = optionParser.getRemainingArgs();
+        System.out.println("!!!!!!!!!!!!!!!!!remainingArgs[0]: "+remainingArgs[0]);
 
         Job job = Job.getInstance(conf, ImportByMR.class.getSimpleName());
         job.setJarByClass(ImportByMR.class);
